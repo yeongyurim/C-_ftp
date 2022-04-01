@@ -78,7 +78,7 @@ namespace solace_vs2015_receiver
                 Log_Box.Invoke(new logcall(logAppend), "세션 연결 성공..!\n");
 
                 // 큐 이름 설정
-                string queueName = "yeonQueue";
+                string queueName = "YeonQueue";
                 Log_Box.Invoke(new logcall(logAppend), queueName + "큐 생성 시도 중...\n");
 
                 // 큐 권한 설정
@@ -119,6 +119,7 @@ namespace solace_vs2015_receiver
             {
                 string FileName = message.UserPropertyMap.GetString("name");
                 string destPath = destinePath.Text+"\\"+message.UserPropertyMap.GetString("prefix");
+                destPath = destPath.Replace("\\\\", "\\");
                 if (!Directory.Exists(destPath))
                 {
                     Directory.CreateDirectory(destPath);
@@ -128,8 +129,11 @@ namespace solace_vs2015_receiver
                 byte[] buffer = new byte[1 * 1024 * 1024];
                 buffer = message.BinaryAttachment;
                 FileStream outStream = new FileStream(destineFileName, FileMode.Create, FileAccess.Write);
-                outStream.Write(buffer, 0, buffer.Length);
-                outStream.Close();
+                if(buffer != null)
+                {
+                    outStream.Write(buffer, 0, buffer.Length);
+                    outStream.Close();
+                }
                 Log_Box.Invoke(new logcall(logAppend),destineFileName+"파일 생성\n");
 
                 Flow.Ack(message.ADMessageId);
@@ -261,6 +265,11 @@ namespace solace_vs2015_receiver
 
         private void btnreceive(object sender, EventArgs e)
         {
+            if (destinePath.Text == "")
+            {
+                MessageBox.Show("경로를 지정해주세요");
+                return;
+            }
             Thread receive = new Thread(Receive);
             receive.Start();
         }

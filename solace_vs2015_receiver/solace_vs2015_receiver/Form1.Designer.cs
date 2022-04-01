@@ -68,7 +68,7 @@
             this.host_.Name = "host_";
             this.host_.Size = new System.Drawing.Size(183, 21);
             this.host_.TabIndex = 2;
-            this.host_.Text = "192.168.10.10:55555";
+            this.host_.Text = "192.168.10.123:55554";
             // 
             // label2
             // 
@@ -119,7 +119,7 @@
             this.password_.Name = "password_";
             this.password_.Size = new System.Drawing.Size(178, 21);
             this.password_.TabIndex = 8;
-            this.password_.Text = "dusrbfla1";
+            this.password_.Text = "edcore";
             // 
             // destinePath
             // 
@@ -127,7 +127,6 @@
             this.destinePath.Name = "destinePath";
             this.destinePath.Size = new System.Drawing.Size(453, 21);
             this.destinePath.TabIndex = 9;
-            this.destinePath.Text = "C:\\Users\\EDCORE\\Desktop\\연규림_작업폴더\\테스트\\C-\\목적폴더";
             // 
             // button2
             // 

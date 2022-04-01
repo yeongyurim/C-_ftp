@@ -26,3 +26,17 @@ C:\Users\EDCORE\Desktop\연규림_작업폴더\오리\solace_vs2015_transmit\sol
 C:\Users\EDCORE\Desktop\연규림_작업폴더\오리\solace_vs2015_transmit\solace_vs2015_transmit\bin\Debug\solace_vs2015_transmit.pdb
 C:\Users\EDCORE\Desktop\연규림_작업폴더\오리\solace_vs2015_transmit\solace_vs2015_transmit\bin\Debug\SolaceSystems.Solclient.Messaging.dll
 C:\Users\EDCORE\Desktop\연규림_작업폴더\오리\solace_vs2015_transmit\solace_vs2015_transmit\bin\Debug\SolaceSystems.Solclient.Messaging.xml
+C:\Users\EDCORE\Downloads\C-_ftp-master\C-_ftp-master\solace_vs2015_transmit\solace_vs2015_transmit\bin\Debug\solace_vs2015_transmit.exe.config
+C:\Users\EDCORE\Downloads\C-_ftp-master\C-_ftp-master\solace_vs2015_transmit\solace_vs2015_transmit\obj\Debug\solace_vs2015_transmit.exe
+C:\Users\EDCORE\Downloads\C-_ftp-master\C-_ftp-master\solace_vs2015_transmit\solace_vs2015_transmit\obj\Debug\solace_vs2015_transmit.pdb
+C:\Users\EDCORE\Downloads\C-_ftp-master\C-_ftp-master\solace_vs2015_transmit\solace_vs2015_transmit\bin\Debug\libcrypto-1_1.dll
+C:\Users\EDCORE\Downloads\C-_ftp-master\C-_ftp-master\solace_vs2015_transmit\solace_vs2015_transmit\bin\Debug\libsolclient.dll
+C:\Users\EDCORE\Downloads\C-_ftp-master\C-_ftp-master\solace_vs2015_transmit\solace_vs2015_transmit\bin\Debug\libssl-1_1.dll
+C:\Users\EDCORE\Downloads\C-_ftp-master\C-_ftp-master\solace_vs2015_transmit\solace_vs2015_transmit\bin\Debug\solace_vs2015_transmit.exe
+C:\Users\EDCORE\Downloads\C-_ftp-master\C-_ftp-master\solace_vs2015_transmit\solace_vs2015_transmit\bin\Debug\solace_vs2015_transmit.pdb
+C:\Users\EDCORE\Downloads\C-_ftp-master\C-_ftp-master\solace_vs2015_transmit\solace_vs2015_transmit\bin\Debug\SolaceSystems.Solclient.Messaging.dll
+C:\Users\EDCORE\Downloads\C-_ftp-master\C-_ftp-master\solace_vs2015_transmit\solace_vs2015_transmit\bin\Debug\SolaceSystems.Solclient.Messaging.xml
+C:\Users\EDCORE\Downloads\C-_ftp-master\C-_ftp-master\solace_vs2015_transmit\solace_vs2015_transmit\obj\Debug\solace_vs2015_transmit.csprojResolveAssemblyReference.cache
+C:\Users\EDCORE\Downloads\C-_ftp-master\C-_ftp-master\solace_vs2015_transmit\solace_vs2015_transmit\obj\Debug\solace_vs2015_transmit.Form1.resources
+C:\Users\EDCORE\Downloads\C-_ftp-master\C-_ftp-master\solace_vs2015_transmit\solace_vs2015_transmit\obj\Debug\solace_vs2015_transmit.Properties.Resources.resources
+C:\Users\EDCORE\Downloads\C-_ftp-master\C-_ftp-master\solace_vs2015_transmit\solace_vs2015_transmit\obj\Debug\solace_vs2015_transmit.csproj.GenerateResource.Cache

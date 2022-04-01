@@ -24,10 +24,9 @@ namespace solace_vs2015_transmit
         string Password { get; set; }
 
         const int DefaultReconnectRetries = 3;
-
-
+        static EventWaitHandle waitHandle = new AutoResetEvent(false);
         static int TM;
- 
+        bool WaitHandleBool = false;
         void Run(IContext context, string host)
         {
             TM = 0;
@@ -74,12 +73,15 @@ namespace solace_vs2015_transmit
                 {
                     Log_Box.Invoke(new logcall(logAppend), "세션 연결 성공..!\n");
                     MessagePreprocess(sourcePath.Text, session);
+                    Log_Box.Invoke(new logcall(logAppend), TM + "개 전송 완료되었습니다.\n");
                 }
                 else
                 {
                     Log_Box.Invoke(new logcall(logAppend), "문제 발생, 오류 코드는 " + returnCode + "입니다\n");
                 }
             }
+            WaitHandleBool = true;
+            waitHandle.WaitOne();
         }
         void MessagePreprocess(string sdir,ISession session)
         {
@@ -96,9 +98,9 @@ namespace solace_vs2015_transmit
                 string prefix = sdir.Replace(sourcePath.Text, "");
                 PublicMessage(prefix,session);
             }
-            catch (System.Exception excpt)
+            catch
             {
-          
+                MessageBox.Show("폴더 전처리 작업중 문제가 발생했습니다!");
             }
         }
         private void PublicMessage(string prefix,ISession session)
@@ -187,15 +189,9 @@ namespace solace_vs2015_transmit
                             Log_Box.Invoke(new logcall(logAppend), "메시지 전송에 실패하였습니다 오류 코드는 " + returnCode + "입니다.\n");
                         }
                     }
-                    Thread.Sleep(1000);
                 }
             }
         }
-
-
-
-
-
         void source_click(object sender, EventArgs e)
         {
             if (dialog.ShowDialog() == DialogResult.OK)
@@ -203,7 +199,6 @@ namespace solace_vs2015_transmit
                 sourcePath.Text = dialog.SelectedPath;
             }
         }
-
         void Send()
         {
             string host = host_.Text;
@@ -232,22 +227,32 @@ namespace solace_vs2015_transmit
             {
                 // Dispose Solace Systems Messaging API
                 ContextFactory.Instance.Cleanup();
-                Log_Box.Invoke(new logcall(logAppend), TM + "개 전송 완료되었습니다.\n");
             }
         }
-
         void logAppend(string log)
         {
             Log_Box.AppendText(log);
             Log_Box.ScrollToCaret();
         }
-
         delegate void logcall(string log);
-
         private void btntransmit(object sender, EventArgs e)
         {
+            if (WaitHandleBool)
+            {
+                waitHandle.Set();
+            }
+            if (sourcePath.Text == "")
+            {
+                MessageBox.Show("경로를 지정해주세요");
+                return;
+            }
             Thread send = new Thread(Send);
             send.Start();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            waitHandle.Set();
         }
     }
 }

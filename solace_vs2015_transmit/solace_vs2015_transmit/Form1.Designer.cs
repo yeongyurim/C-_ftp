@@ -104,7 +104,7 @@
             this.host_.Name = "host_";
             this.host_.Size = new System.Drawing.Size(188, 21);
             this.host_.TabIndex = 8;
-            this.host_.Text = "192.168.10.10:55555";
+            this.host_.Text = "192.168.10.123:55554";
             // 
             // user_name
             // 
@@ -121,7 +121,7 @@
             this.password_.Name = "password_";
             this.password_.Size = new System.Drawing.Size(188, 21);
             this.password_.TabIndex = 11;
-            this.password_.Text = "dusrbfla1";
+            this.password_.Text = "edcore";
             // 
             // sourcePath
             // 
@@ -129,7 +129,6 @@
             this.sourcePath.Name = "sourcePath";
             this.sourcePath.Size = new System.Drawing.Size(444, 21);
             this.sourcePath.TabIndex = 12;
-            this.sourcePath.Text = "C:\\Users\\EDCORE\\Desktop\\연규림_작업폴더\\테스트\\C-\\소스폴더";
             // 
             // vpn_name
             // 
@@ -166,6 +165,7 @@
             this.Controls.Add(this.source);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
